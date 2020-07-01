@@ -7,6 +7,8 @@ Run the following command to install required packages.
 pip install -r req.txt
 ```
 
+## Usage Guide
+
 ```python
     # you can copy the url of particular user from messenger.com !!
     # You need to download selenium web driver for this to work !!
