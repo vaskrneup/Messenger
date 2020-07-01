@@ -1,3 +1,13 @@
+## Installation
+Messenger runs on Python 3.6 or greater:
+
+Run the following command to install required packages.
+
+```sh
+pip install -r req.txt
+```
+
+```python
     # you can copy the url of particular user from messenger.com !!
     # You need to download selenium web driver for this to work !!
     # you can download driver for your preferred browser here:
@@ -17,3 +27,4 @@
     messenger.send_message()
     # close after everything is completed !!
     messenger.close()
+```
