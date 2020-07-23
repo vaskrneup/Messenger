@@ -91,14 +91,16 @@ class Messenger:
         if use_random_message:
             for _ in range(message_count):
                 self.__message(
-                    message=secrets.token_urlsafe(random.randint(int(min_message_length), int(max_message_length))),
+                    message=secrets.token_urlsafe(random.randint(
+                        int(min_message_length), int(max_message_length))),
                     wait_before_next_message=wait_before_next_message
                 )
         else:
             # for sending provided messages.
             if self.messages:
                 for message in self.messages:
-                    self.__message(message=message, wait_before_next_message=wait_before_next_message)
+                    self.__message(
+                        message=message, wait_before_next_message=wait_before_next_message)
             else:
                 raise ValueError(
                     "No Message Provided, you can use set_messages([<MY MESSAGE LIST>]) to provide messages"
@@ -119,12 +121,15 @@ if __name__ == '__main__':
     # You need to download selenium web driver for this to work !!
     # you can download driver for your preferred browser here:
     # https://selenium-python.readthedocs.io/installation.html
+    username = input('Enter your username(Facebook): ')
+    password = input('Enter your password(Facebook): ')
+    victim = input('Enter victim\'s username(Facebook): ')
     messenger = Messenger(
-        "https://www.messenger.com/t/<USERNAME>",
+        f"https://www.messenger.com/t/{victim}",
         driver_path="<DRIVER PATH>"
     )
     # Login Using your facebook credentials !!
-    messenger.login("<USERNAME>", "<PASSWORD>")
+    messenger.login(f"{username}", f"{password}")
     # user use_random_message=True to send random message.
     # You can use message count to specify how many message you wish to send.
     messenger.send_message(use_random_message=True, message_count=100)
