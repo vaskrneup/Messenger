@@ -124,6 +124,12 @@ if __name__ == '__main__':
     username = input('Enter your username(Facebook): ')
     password = input('Enter your password(Facebook): ')
     victim = input('Enter victim\'s username(Facebook): ')
+    
+    # Checking if user input is nothing    
+    if username == '' and password == '' and victim == '':
+        print('Please fill the input with correct details')
+        print('Stopping program execution...')
+    
     messenger = Messenger(
         f"https://www.messenger.com/t/{victim}",
         driver_path="<DRIVER PATH>"
